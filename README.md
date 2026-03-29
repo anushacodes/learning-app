@@ -4,14 +4,14 @@ This app is a Vite + React + TypeScript frontend.
 
 The runnable project lives here:
 
-`/Users/anusha/code/vscode/mmm/kimi/app`
+`/Users/anusha/code/vscode/mmm`
 
 ## Run locally
 
 1. Open a terminal in the app folder:
 
 ```bash
-cd "mmm/kimi/app"
+cd "mmm"
 ```
 
 2. Install dependencies:
@@ -67,7 +67,7 @@ Use these settings:
 
 - Service type: `Static Site`
 - Branch: the branch you want Render to deploy
-- Root Directory: `kimi/app`
+- Root Directory: leave blank
 - Build Command: `npm ci && npm run build`
 - Publish Directory: `dist`
 
@@ -79,7 +79,7 @@ No start command is needed.
 2. In Render, click `New +`.
 3. Choose `Static Site`.
 4. Connect your GitHub repo and select this repository.
-5. Set `Root Directory` to `kimi/app`.
+5. Leave `Root Directory` empty so Render builds from the repo root.
 6. Set `Build Command` to:
 
 ```bash

@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const sourcePath = "/Users/anusha/Desktop/24-week-learning-plan.md";
-const outputPath = path.join(projectRoot, "app", "src", "data", "v2Curriculum.ts");
+const outputPath = path.join(projectRoot, "src", "data", "v2Curriculum.ts");
 
 function escapeHtml(value) {
   return value
