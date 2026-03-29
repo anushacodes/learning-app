@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+button:focus-visible,
+a:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+.expanded-rich-content {
+  color: hsl(var(--foreground));
+}
+
+.expanded-rich-content > * + * {
+  margin-top: 0.9rem;
+}
+
+.expanded-rich-content p {
+  line-height: 1.65;
+}
+
+.expanded-rich-content h4,
+.expanded-rich-content h5,
+.expanded-rich-content h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.expanded-rich-content ul,
+.expanded-rich-content ol {
+  margin: 0.75rem 0 0;
+  padding-left: 1.4rem;
+}
+
+.expanded-rich-content li + li {
+  margin-top: 0.45rem;
+}
+
+.expanded-rich-content code {
+  background: hsl(var(--muted));
+  border-radius: 0.375rem;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.875em;
+}
+
+.expanded-rich-content pre {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: hsl(var(--muted));
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+.expanded-rich-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.expanded-rich-content blockquote {
+  border-left: 4px solid hsl(var(--primary) / 0.35);
+  border-radius: 0.75rem;
+  background: hsl(var(--muted));
+  padding: 1rem 1.1rem;
+}
+
+.expanded-rich-content hr {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.expanded-rich-content .table-wrap {
+  overflow-x: auto;
+}
+
+.expanded-rich-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expanded-rich-content th,
+.expanded-rich-content td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.expanded-rich-content th {
+  background: hsl(var(--muted));
+  font-weight: 600;
+}
+
+.expanded-rich-content a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
